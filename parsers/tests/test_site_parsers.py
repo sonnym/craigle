@@ -1,14 +1,10 @@
-import os.path
+from .base import ParserTestCase
 
-from django.test import TestCase
 from parsers.models import SiteParser
 
-class TestSiteParser(TestCase):
+class TestSiteParser(ParserTestCase):
     def test_run(self):
-        fixture = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'fixtures', 'sites')
-        with open(fixture, 'r') as f:
-            html = f.read()
-
+        html = self.load_fixture('sites')
         cities = SiteParser().run(html)
 
         self.assertEqual(len(cities), 712)
