@@ -1,3 +1,8 @@
-from django.db import models
+from lxml import html
 
-# Create your models here.
+class CityParser():
+    def run(self, contents):
+        tree = html.document_fromstring(contents)
+        cities = tree.cssselect('section.body ul li a')
+
+        return [{ 'name': city.text_content(), 'url': city.get('href') } for city in cities]
