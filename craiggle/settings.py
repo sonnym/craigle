@@ -38,6 +38,12 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'craiggle',
+
+    'importers',
+    'parsers',
+
+    'cities',
+    'posts',
 )
 
 MIDDLEWARE_CLASSES = (
