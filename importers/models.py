@@ -1,6 +1,6 @@
 from urllib.request import urlopen
 
-from parsers.models import CityParser
+from parsers.models import SiteParser
 from cities.models import City
 
 class CityImporter():
@@ -11,7 +11,7 @@ class CityImporter():
         response = urlopen(cls.url)
         html = response.read()
 
-        cities = CityParser().run(html)
+        cities = SiteParser().run(html)
 
 
         for city in cities:
