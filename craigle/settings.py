@@ -1,5 +1,5 @@
 """
-Django settings for craiggle project.
+Django settings for craigle project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
@@ -39,7 +39,7 @@ INSTALLED_APPS = (
 
     'django_rq',
 
-    'craiggle',
+    'craigle',
 
     'importers',
     'parsers',
@@ -58,9 +58,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'craiggle.urls'
+ROOT_URLCONF = 'craigle.urls'
 
-WSGI_APPLICATION = 'craiggle.wsgi.application'
+WSGI_APPLICATION = 'craigle.wsgi.application'
 
 
 # Database
@@ -69,7 +69,7 @@ WSGI_APPLICATION = 'craiggle.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'craiggle_dev',
+        'NAME': 'craigle_dev',
     }
 }
 
