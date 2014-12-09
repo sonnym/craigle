@@ -3,7 +3,7 @@ from urllib.request import urlopen
 from parsers.models import SiteParser
 from cities.models import City
 
-class CityImporter():
+class SiteImporter():
     url = 'https://www.craigslist.org/about/sites'
 
     @classmethod
