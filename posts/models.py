@@ -1,3 +1,6 @@
 from django.db import models
 
-# Create your models here.
+class Post(models.Model):
+    @classmethod
+    def create_or_update(cls, url):
+        pass
