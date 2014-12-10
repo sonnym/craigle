@@ -26,11 +26,11 @@ class CityImporter():
 
     @classmethod
     @job
-    def run(cls, City):
-        response = urlopen(urljoin(City.url, cls.path, allow_fragments=True))
+    def run(cls, city):
+        response = urlopen(urljoin(city.url, cls.path, allow_fragments=True))
         html = response.read()
 
         posts = CityParser().run(html)
 
         for post in posts:
-            Post.create_or_update(urljoin(City.url, post))
+            Post.create_or_update(urljoin(city.url, post))
