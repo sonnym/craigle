@@ -3,10 +3,10 @@ from posts.models import Post
 
 class PostTest(TestCase):
     def test_create_or_update(self):
-        data = 'foo'
+        url = 'foo'
 
-        Post.create_or_update(data)
+        Post.create_or_update(url)
         self.assertEqual(1, Post.objects.count())
 
-        Post.create_or_update(data)
+        Post.create_or_update(url)
         self.assertEqual(1, Post.objects.count())
