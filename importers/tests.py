@@ -11,23 +11,18 @@ class SiteImporterTest(TestCase):
     def test_run(self):
         cities = [{ 'name': 'foo', 'url': 'bar' }]
 
-        mock = Mock(City.create_or_update)
-        City.create_or_update = mock
-
-        with patch.object(SiteParser, 'run', return_value=cities) as mock_method:
-            SiteImporter.run()
-
-            mock.assert_called_once_with(cities[0])
+        with patch.object(SiteParser, 'run', return_value=cities):
+            with patch.object(City, 'create_or_update') as mock_city_create_or_update:
+                SiteImporter.run()
+                mock_city_create_or_update.assert_called_once_with(cities[0])
 
 class CityImporterTest(TestCase):
     def test_run(self):
         city = Mock(url='http://nyc.craigslist.org/')
         posts = ['/foo/bar']
 
-        mock = Mock(Post.create_or_update)
-        Post.create_or_update = mock
+        with patch.object(CityParser, 'run', return_value=posts):
+            with patch.object(Post, 'create_or_update') as mock_post_create_or_update:
+                CityImporter.run(city)
 
-        with patch.object(CityParser, 'run', return_value=posts) as mock_method:
-            CityImporter.run(city)
-
-            mock.assert_called_once_with('http://nyc.craigslist.org/foo/bar')
+                mock_post_create_or_update.assert_called_once_with('http://nyc.craigslist.org/foo/bar')
