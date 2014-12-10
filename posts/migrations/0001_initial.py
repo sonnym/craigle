@@ -13,7 +13,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Post',
             fields=[
-                ('id', models.AutoField(serialize=False, auto_created=True, verbose_name='ID', primary_key=True)),
+                ('id', models.AutoField(verbose_name='ID', primary_key=True, serialize=False, auto_created=True)),
+                ('url', models.CharField(max_length=127)),
+                ('title', models.CharField(max_length=255)),
+                ('compensation', models.CharField(max_length=255)),
             ],
             options={
             },
