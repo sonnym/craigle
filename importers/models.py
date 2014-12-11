@@ -3,7 +3,8 @@ from urllib.request import urlopen
 
 from django_rq import job
 
-from parsers.models import SiteParser, CityParser
+from parsers.models import SiteParser, CityParser, PostParser
+
 from cities.models import City
 from posts.models import Post
 
@@ -34,3 +35,17 @@ class CityImporter():
 
         for post in posts:
             Post.create_or_update(urljoin(city.url, post))
+
+class PostImporter():
+    @classmethod
+    @job
+    def run(cls, post):
+        response = urlopen(post.url)
+        html = response.read()
+
+        post_data = PostParser().run(html)
+
+        post.title = post_data['title']
+        post.compensation = post_data['compensation']
+
+        post.save()

@@ -1,8 +1,8 @@
 from unittest.mock import Mock, patch
 from django.test import TestCase
 
-from importers.models import SiteImporter, CityImporter
-from parsers.models import SiteParser, CityParser
+from importers.models import SiteImporter, CityImporter, PostImporter
+from parsers.models import SiteParser, CityParser, PostParser
 
 from cities.models import City
 from posts.models import Post
@@ -26,3 +26,14 @@ class CityImporterTest(TestCase):
                 CityImporter.run(city)
 
                 mock_post_create_or_update.assert_called_once_with('http://nyc.craigslist.org/foo/bar')
+
+class PostImporterTest(TestCase):
+    def test_run(self):
+        post_data = { 'title': 'Some Title', 'compensation': 'Some Compensation' }
+
+        with patch.object(PostParser, 'run', return_value=post_data):
+            post = Mock(url='http://example.com/')
+
+            PostImporter.run(post)
+
+            post.save.assert_called_once_with()
