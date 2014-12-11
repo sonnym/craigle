@@ -19,8 +19,9 @@ class SiteImporter():
 
         cities = SiteParser().run(html)
 
-        for city in cities:
-            City.create_or_update(city)
+        for city_data in cities:
+            city = City.create_or_update(city_data)
+            CityImporter.run.delay(city)
 
 class CityImporter():
     path = 'search/jjj/?cat_id=14&cat_id=21&cat_id=11&is_telecommuting=1&is_contract=1'
@@ -33,8 +34,9 @@ class CityImporter():
 
         posts = CityParser().run(html)
 
-        for post in posts:
-            Post.create_or_update(urljoin(city.url, post))
+        for post_data in posts:
+            post = Post.create_or_update(urljoin(city.url, post_data))
+            PostImporter.run.delay(post)
 
 class PostImporter():
     @classmethod
