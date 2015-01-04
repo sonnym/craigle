@@ -1,3 +1,6 @@
 venv
+
 craigle/settings.py
+craigle/secret_key.py
+
 *.pyc
