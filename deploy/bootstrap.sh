@@ -72,6 +72,15 @@ then
   cp /vagrant/deploy/httpd.conf /etc/httpd/conf.d/craigle.conf
 fi
 
+# configure and start workers
+if [[ -n /etc/supervisord.d/craigle_worker.ini ]]
+then
+  cp /vagrant/deploy/supervisord.ini /etc/supervisor.d/
+
+  supervisorctl reread
+  supervisorctl update
+fi
+
 if [[ $PROVISION_REBOOT ]];
 then
   /sbin/shutdown -r now
