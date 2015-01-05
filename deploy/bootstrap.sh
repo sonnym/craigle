@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+SUPERUSER_PASSWORD=$1
+
+if [[ -z "$SUPERUSER_PASSWORD" ]]
+then
+  echo "Usage: bootstrap.sh superuser_password"
+  exit 1
+fi
+
 # upgrade to fedora 21
 if [[ $(cat /etc/fedora-release) == "Fedora release 20 (Heisenbug)" ]]
 then
@@ -60,9 +68,9 @@ then
 
   # migrations, static files, admin, and initial queue function
   ./manage.py migrate
-
   ./manage.py collectstatic --noinput
-  ./manage.py createsuperuser --noinput --email=michaud.sonny@gmail.com --username=sonny
+
+  echo "from django.contrib.auth.models import User; User.objects.create_superuser('sonny', 'michaud.sonny@gmail.com', '$SUPERUSER_PASSWORD')" | ./manage.py shell
 
   ./manage.py rqenqueue 'importers.run'
 fi
