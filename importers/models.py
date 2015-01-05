@@ -34,7 +34,7 @@ class CityImporter():
 
         for post_data in posts:
             post = Post.create_or_update(urljoin(city.url, post_data))
-            django_rq.enqueue(PostImporter.run, PostImporter, post)
+            django_rq.enqueue(PostImporter.run, post)
 
 class PostImporter():
     @classmethod
