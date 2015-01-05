@@ -85,7 +85,7 @@ fi
 # configure and start workers
 if [[ -n /etc/supervisord.d/craigle_worker.ini ]]
 then
-  cp /vagrant/deploy/supervisord.ini /etc/supervisord.d/
+  cp /vagrant/deploy/supervisord.ini /etc/supervisord.d/craigle_worker.ini
 
   supervisorctl reread
   supervisorctl update
