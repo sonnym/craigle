@@ -19,15 +19,15 @@ fi
 if [[ ! $(command -v virtualenv) ]]
 then
   # system dependencies
-  yum install --assumeyes python3-mod_wsgi git postgresql-{server,contrib,devel} redis gcc {libxml2,libxslt,python3}-devel
+  yum install --assumeyes python3-mod_wsgi git postgresql-{server,contrib,devel} redis gcc {libxml2,libxslt,python3}-devel supervisor
   pip3 install virtualenv
 
   # setup postgresql
   postgresql-setup initdb
 
   # enable services
-  systemctl enable httpd postgresql redis
-  systemctl start httpd postgresql redis
+  systemctl enable httpd postgresql redis supervisord
+  systemctl start httpd postgresql redis supervisord
 
   # set up database and users
   su postgres -c 'createdb craigle_production'
