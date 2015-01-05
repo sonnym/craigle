@@ -47,12 +47,8 @@ then
   # add settings files
   if [[ -n /srv/craigle/craigle/settings.py ]]
   then
-    cd craigle
-
-    cp /vagrant/craigle/settings.py.example /srv/craigle/craigle/settings.py
-    echo "SECRET_KEY = '$(openssl rand -base64 32)'" > secret_key.py
-
-    cd -
+    cp /vagrant/craigle/settings.py.example craigle/settings.py
+    echo "SECRET_KEY = '$(openssl rand -base64 32)'" > craigle/secret_key.py
   fi
 
   # local dependencies
@@ -60,7 +56,10 @@ then
   source venv/bin/activate
   pip3 install -r requirements.txt
 
+  # migrations, static files and admin
   ./manage.py migrate
+  ./manage.py collectstatic --noinput
+  ./manage.py createsuperuser --noinput --email=michaud.sonny@gmail.com --username=sonny
 fi
 
 if [[ -n /etc/httpd/conf.d/craigle.conf ]]
@@ -69,11 +68,6 @@ then
   rm /etc/httpd/conf.d/*.conf
   cp /vagrant/deploy/httpd.conf /etc/httpd/conf.d/craigle.conf
 fi
-
-# collect static files and create admin
-cd /srv/craigle
-./manage.py collectstatic --noinput
-./manage.py createsuperuser --noinput --email=michaud.sonny@gmail.com --username=sonny
 
 if [[ $PROVISION_REBOOT ]];
 then
