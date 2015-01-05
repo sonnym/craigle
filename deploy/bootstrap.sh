@@ -13,7 +13,7 @@ then
 
   sync
 
-  PROVISION_REBOOT=!
+  PROVISION_REBOOT=1
 fi
 
 if [[ ! $(command -v virtualenv) ]]
