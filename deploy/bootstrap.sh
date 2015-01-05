@@ -56,10 +56,13 @@ then
   source venv/bin/activate
   pip3 install -r requirements.txt
 
-  # migrations, static files and admin
+  # migrations, static files, admin, and initial queue function
   ./manage.py migrate
+
   ./manage.py collectstatic --noinput
   ./manage.py createsuperuser --noinput --email=michaud.sonny@gmail.com --username=sonny
+
+  ./manage.py rqenqueue 'importers.run'
 fi
 
 if [[ -n /etc/httpd/conf.d/craigle.conf ]]
