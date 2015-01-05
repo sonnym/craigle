@@ -15,3 +15,5 @@ class Post(models.Model):
             post = Post(url=url)
 
         post.save()
+
+        return post

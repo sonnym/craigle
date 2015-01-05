@@ -15,3 +15,5 @@ class City(models.Model):
             city = City(**city_data)
 
         city.save()
+
+        return city
