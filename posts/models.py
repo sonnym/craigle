@@ -2,7 +2,7 @@ from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 
 class Post(models.Model):
-    url = models.CharField(max_length=127)
+    url = models.CharField(max_length=127, unique=True)
     title = models.CharField(max_length=255)
     compensation = models.CharField(max_length=255)
 
