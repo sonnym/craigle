@@ -16,6 +16,7 @@ then
   PROVISION_REBOOT=1
 fi
 
+# system
 if [[ ! $(command -v virtualenv) ]]
 then
   # system dependencies
@@ -34,6 +35,7 @@ then
   su postgres -c 'createuser -s apache'
 fi
 
+# application
 if ! [ -L /srv/craigle ]
 then
   # initial setup of directory
@@ -64,9 +66,9 @@ then
   ./manage.py rqenqueue 'importers.run'
 fi
 
+# setup httpd
 if [[ -n /etc/httpd/conf.d/craigle.conf ]]
 then
-  # setup httpd
   rm /etc/httpd/conf.d/*.conf
   cp /vagrant/deploy/httpd.conf /etc/httpd/conf.d/craigle.conf
 fi
