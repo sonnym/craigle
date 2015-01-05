@@ -30,8 +30,9 @@ then
   systemctl enable httpd postgresql redis supervisord
   systemctl start httpd postgresql redis supervisord
 
-  # set up database and user
+  # set up database and users
   su postgres -c 'createdb craigle_production'
+  su postgres -c 'createuser -s root'
   su postgres -c 'createuser -s apache'
 fi
 
