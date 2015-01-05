@@ -26,8 +26,8 @@ then
   postgresql-setup initdb
 
   # enable services
-  systemctl enable postgresql redis
-  systemctl start postgresql redis
+  systemctl enable httpd postgresql redis
+  systemctl start httpd postgresql redis
 
   # set up database and users
   su postgres -c 'createdb craigle_production'
