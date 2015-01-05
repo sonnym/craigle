@@ -70,8 +70,10 @@ then
   cp /vagrant/deploy/httpd.conf /etc/httpd/conf.d/craigle.conf
 fi
 
-# collect static files
-cd /srv/craigle && ./manage.py collectstatic --noinput
+# collect static files and create admin
+cd /srv/craigle
+./manage.py collectstatic --noinput
+./manage.py createsuperuser --noinput --email=michaud.sonny@gmail.com --username=sonny
 
 if [[ $PROVISION_REBOOT ]];
 then
