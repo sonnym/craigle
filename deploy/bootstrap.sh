@@ -28,8 +28,14 @@ fi
 if [[ ! $(command -v virtualenv) ]]
 then
   # system dependencies
-  yum install --assumeyes python3-mod_wsgi git postgresql-{server,contrib,devel} redis gcc {libxml2,libxslt,python3}-devel supervisor
-  pip3 install virtualenv
+  yum install --assumeyes python3-{mod_wsgi,pip} git postgresql-{server,contrib,devel} redis gcc {libxml2,libxslt,python3}-devel supervisor
+
+  if [[ -n /usr/bin/pip3 ]]
+  then
+    ln -s /usr/bin/python3-pip /usr/bin/pip3
+  fi
+
+  python3-pip install virtualenv
 
   # setup postgresql
   postgresql-setup initdb
@@ -49,7 +55,6 @@ if ! [ -L /srv/craigle ]
 then
   # initial setup of directory
   mkdir -p /srv/craigle
-  chown -R apache:apache /srv
   git clone --depth 1 https://github.com/sonnym/craigle.git /srv/craigle
 
   cd /srv/craigle
@@ -73,6 +78,8 @@ then
   echo "from django.contrib.auth.models import User; User.objects.create_superuser('sonny', 'michaud.sonny@gmail.com', '$SUPERUSER_PASSWORD')" | ./manage.py shell
 
   ./manage.py rqenqueue 'importers.run'
+
+  chown -R apache:apache /srv/craigle
 fi
 
 # setup httpd
