@@ -1,6 +1,7 @@
 Vagrant.configure(2) do |config|
   config.vm.box = 'chef/fedora-20'
 
+  config.vm.synced_folder ".", "/vagrant", disabled: true
   config.vm.provision :shell, path: 'deploy/bootstrap.sh', args: "#{ENV['SUPERUSER_PASSWORD']}"
 
   config.vm.define 'testing', primary: true do |test|

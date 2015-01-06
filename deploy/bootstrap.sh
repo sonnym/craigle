@@ -55,9 +55,9 @@ then
   cd /srv/craigle
 
   # add settings files
-  if [[ -n /srv/craigle/craigle/settings.py ]]
+  if [[ -n craigle/settings.py ]]
   then
-    cp /vagrant/craigle/settings.py.example craigle/settings.py
+    cp craigle/settings.py{.example,}
     echo "SECRET_KEY = '$(openssl rand -base64 32)'" > craigle/secret_key.py
   fi
 
@@ -79,13 +79,13 @@ fi
 if [[ -n /etc/httpd/conf.d/craigle.conf ]]
 then
   rm /etc/httpd/conf.d/*.conf
-  cp /vagrant/deploy/httpd.conf /etc/httpd/conf.d/craigle.conf
+  cp /srv/craigle/deploy/httpd.conf /etc/httpd/conf.d/craigle.conf
 fi
 
 # configure and start workers
 if [[ -n /etc/supervisord.d/craigle_worker.ini ]]
 then
-  cp /vagrant/deploy/supervisord.ini /etc/supervisord.d/craigle_worker.ini
+  cp /srv/craigle/deploy/supervisord.ini /etc/supervisord.d/craigle_worker.ini
 
   supervisorctl reread
   supervisorctl update
