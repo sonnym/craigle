@@ -10,17 +10,18 @@ Vagrant.configure(2) do |config|
   config.vm.define 'production' do |production|
     production.vm.hostname = 'craigle.us'
 
-    production.ssh.username = 'sonny'
-    production.ssh.private_key_path = '~/.ssh/id_rsa'
-
     production.vm.box = 'digital_ocean'
     production.vm.box_url = "https://github.com/smdahlen/vagrant-digitalocean/raw/master/box/digital_ocean.box"
 
-    production.vm.provider :digital_ocean do |provider, _|
+    production.vm.provider :digital_ocean do |provider, override|
+      override.ssh.username = 'sonny'
+      override.ssh.private_key_path = '~/.ssh/id_rsa'
+      override.ssh.pty = true
+
       provider.token = File.read(File.expand_path('~/.digitalocean_token'))
 
       provider.image = 'fedora-20-x64'
-      provider.region = 'nyc2'
+      provider.region = 'nyc3'
       provider.size = '512mb'
     end
   end
