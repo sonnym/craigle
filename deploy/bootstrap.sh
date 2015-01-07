@@ -38,6 +38,9 @@ then
   su postgres -c 'createdb craigle_production'
   su postgres -c 'createuser -s root'
   su postgres -c 'createuser -s apache'
+
+  # open port 80
+  firewall-cmd --zone=public --add-service=http --permanent && firewall-cmd --reload
 fi
 
 # swap file for compiling python binaries
