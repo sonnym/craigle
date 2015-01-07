@@ -66,15 +66,6 @@ then
     echo "SECRET_KEY = '$(openssl rand -base64 32)'" > craigle/secret_key.py
   fi
 
-  # local dependencies
-  virtualenv venv
-  source venv/bin/activate
-  pip3 install -r requirements.txt
-
-  # migrations, static files, admin, and initial queue function
-  ./manage.py migrate
-  ./manage.py collectstatic --noinput
-
   echo "from django.contrib.auth.models import User; User.objects.create_superuser('sonny', 'michaud.sonny@gmail.com', '$SUPERUSER_PASSWORD')" | ./manage.py shell
 
   ./manage.py rqenqueue 'importers.run'
