@@ -1,13 +1,5 @@
 #!/usr/bin/env bash
 
-SUPERUSER_PASSWORD=$1
-
-if [[ -z "$SUPERUSER_PASSWORD" ]]
-then
-  echo "Usage: bootstrap.sh superuser_password"
-  exit 1
-fi
-
 # upgrade to fedora 21
 if [[ $(cat /etc/fedora-release) == "Fedora release 20 (Heisenbug)" ]]
 then
@@ -30,12 +22,10 @@ then
   # system dependencies
   yum install --assumeyes python3-{mod_wsgi,pip} git postgresql-{server,contrib,devel} redis gcc {libxml2,libxslt,python3}-devel supervisor
 
-  if [[ -n /usr/bin/pip3 ]]
-  then
-    ln -s /usr/bin/python3-pip /usr/bin/pip3
-  fi
+  # ensure pip3 exists in expected location
+  hash pip3 2>/dev/null || ln -s /usr/bin/python3-pip /usr/bin/pip3
 
-  python3-pip install virtualenv
+  pip3 install virtualenv
 
   # setup postgresql
   postgresql-setup initdb
@@ -66,9 +56,8 @@ then
     echo "SECRET_KEY = '$(openssl rand -base64 32)'" > craigle/secret_key.py
   fi
 
-  echo "from django.contrib.auth.models import User; User.objects.create_superuser('sonny', 'michaud.sonny@gmail.com', '$SUPERUSER_PASSWORD')" | ./manage.py shell
-
-  ./manage.py rqenqueue 'importers.run'
+  # initialize virtualenv
+  virtualenv venv
 
   chown -R apache:apache /srv/craigle
 fi

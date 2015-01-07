@@ -1,6 +1,6 @@
 Vagrant.configure(2) do |config|
   config.vm.synced_folder ".", "/vagrant", disabled: true
-  config.vm.provision :shell, path: 'deploy/bootstrap.sh', args: "#{ENV['SUPERUSER_PASSWORD']}"
+  config.vm.provision :shell, path: 'deploy/bootstrap.sh'
 
   config.vm.define 'testing', primary: true do |test|
     test.vm.box = 'chef/fedora-20'
@@ -11,6 +11,7 @@ Vagrant.configure(2) do |config|
     production.vm.hostname = 'craigle.us'
 
     production.ssh.private_key_path = '~/.ssh/id_rsa'
+    production.ssh.username = 'sonny'
     production.ssh.pty = true
 
     production.vm.box = 'digital_ocean'
