@@ -13,7 +13,11 @@ def deploy(environment):
 
         sudo('sudo systemctl reload-or-restart httpd supervisord')
 
-        sudo('venv/bin/python3 manage.py rqenqueue "importers.run"')
+def seed(environment):
+    _configure_env(environment)
+
+    with cd( '/srv/craigle'):
+        sudo('sudo systemctl reload-or-restart httpd supervisord')
 
 def _configure_env(environment):
     resolve_key_filename(environment)
