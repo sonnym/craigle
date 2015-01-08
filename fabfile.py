@@ -20,10 +20,10 @@ def seed(environment):
         sudo('sudo systemctl reload-or-restart httpd supervisord')
 
 def _configure_env(environment):
-    resolve_key_filename(environment)
+    _resolve_key_filename(environment)
 
-    env.host_string = resolve_host(environment)
-    env.user = resolve_user(environment)
+    env.host_string = _resolve_host(environment)
+    env.user = _resolve_user(environment)
 
 def _resolve_host(environment):
     if environment == 'production':
