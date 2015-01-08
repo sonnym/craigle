@@ -1,3 +1,4 @@
+from datetime import datetime
 from lxml import html
 
 class SiteParser():
@@ -21,4 +22,7 @@ class PostParser():
         title = str(tree.cssselect('h2.postingtitle')[0].text_content()).strip()
         compensation = tree.cssselect('div.mapAndAttrs div.bigattr b')[0].text
 
-        return { 'title': title, 'compensation': compensation }
+        posted_at = tree.cssselect('p#display-date time')[0].get('datetime')
+        parsed_posted_at = datetime.strptime(posted_at, '%Y-%m-%dT%H:%M:%S%z')
+
+        return { 'title': title, 'compensation': compensation, 'posted_at': parsed_posted_at }

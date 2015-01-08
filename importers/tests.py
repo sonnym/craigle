@@ -1,5 +1,9 @@
+from datetime import datetime
+
 from unittest.mock import Mock, patch
 from django.test import TestCase
+
+from django.utils.timezone import utc
 
 import django_rq
 
@@ -38,7 +42,7 @@ class CityImporterTest(TestCase):
 
 class PostImporterTest(TestCase):
     def test_run(self):
-        post_data = { 'title': 'Some Title', 'compensation': 'Some Compensation' }
+        post_data = { 'title': 'Some Title', 'compensation': 'Some Compensation', 'posted_at': datetime.utcnow().replace(tzinfo=utc) }
 
         with patch.object(PostParser, 'run', return_value=post_data):
             post = Mock(url='http://example.com/')

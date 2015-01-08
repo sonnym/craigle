@@ -47,4 +47,6 @@ class PostImporter():
         post.title = post_data['title']
         post.compensation = post_data['compensation']
 
+        post.posted_at = post_data['posted_at']
+
         post.save()
