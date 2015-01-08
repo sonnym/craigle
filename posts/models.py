@@ -27,6 +27,7 @@ class Post(models.Model):
 
         return post
 
+    @property
     def posted_at_str():
         if posted_at:
             posted_at.strftime('%Y-%m-%d %H:%M')
