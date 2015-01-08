@@ -5,10 +5,14 @@ def deploy(environment):
 
     with cd( '/srv/craigle'):
         sudo('git pull')
+
         sudo('venv/bin/pip3 install -r requirements.txt')
-        sudo('venv/bin/python3 manage.py collectstatic --noinput')
+
         sudo('venv/bin/python3 manage.py migrate --noinput')
+        sudo('venv/bin/python3 manage.py collectstatic --noinput')
+
         sudo('sudo systemctl reload-or-restart httpd supervisord')
+
         sudo('venv/bin/python3 manage.py rqenqueue "importers.run"')
 
 def configure_env(environment):
