@@ -1,3 +1,5 @@
+from datetime import datetime, timedelta
+
 from urllib.parse import urljoin
 from urllib.request import urlopen
 
@@ -21,6 +23,9 @@ class SiteImporter():
         for city_data in cities:
             city = City.create_or_update(city_data)
             django_rq.enqueue(CityImporter.run, city)
+
+        nextrun = datetime.now() + timedelta(hours=6)
+        django_rq.get_scheduler('default').enqueue_at(nextrun, cls.run)
 
 class CityImporter():
     path = 'search/jjj/?cat_id=14&cat_id=21&cat_id=11&is_telecommuting=1&is_contract=1'

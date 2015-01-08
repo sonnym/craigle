@@ -16,15 +16,17 @@ from posts.models import Post
 class SiteImporterTest(TestCase):
     def test_run(self):
         cities = [{ 'name': 'foo', 'url': 'bar' }]
+        scheduler = Mock()
 
         with patch.object(SiteParser, 'run', return_value=cities):
             with patch.object(City, 'create_or_update') as mock_city_create_or_update:
                 with patch.object(django_rq, 'enqueue') as mock_django_rq_enqueue:
-                    SiteImporter.run()
+                    with patch.object(django_rq, 'get_scheduler', return_value=scheduler):
+                        SiteImporter.run()
 
-                    mock_city_create_or_update.assert_called_once_with(cities[0])
+                        mock_city_create_or_update.assert_called_once_with(cities[0])
 
-                    mock_django_rq_enqueue.assert_called
+                        mock_django_rq_enqueue.assert_called
 
 class CityImporterTest(TestCase):
     def test_run(self):
