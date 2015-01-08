@@ -28,8 +28,8 @@ class Post(models.Model):
         return post
 
     @property
-    def posted_at_str():
-        if posted_at:
-            posted_at.strftime('%Y-%m-%d %H:%M')
+    def posted_at_str(self):
+        if self.posted_at:
+            return self.posted_at.strftime('%Y-%m-%d %H:%M')
         else:
-            'N/A'
+            return 'N/A'
