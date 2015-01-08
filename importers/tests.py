@@ -45,8 +45,13 @@ class PostImporterTest(TestCase):
         post_data = { 'title': 'Some Title', 'compensation': 'Some Compensation', 'posted_at': datetime.utcnow().replace(tzinfo=utc) }
 
         with patch.object(PostParser, 'run', return_value=post_data):
-            post = Mock(url='http://example.com/')
+            post = Mock(url='http://example.com/', title='')
 
             PostImporter.run(post)
 
             post.save.assert_called_once_with()
+
+    def test_does_no_reprocess_parsed_posts(self):
+        post = Mock(title='Already Parsed Post')
+
+        self.assertIsNone(PostImporter.run(post))

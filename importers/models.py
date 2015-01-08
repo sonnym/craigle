@@ -39,6 +39,9 @@ class CityImporter():
 class PostImporter():
     @classmethod
     def run(cls, post):
+        if post.title:
+            return
+
         response = urlopen(post.url)
         html = response.read()
 
