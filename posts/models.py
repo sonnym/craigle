@@ -10,6 +10,8 @@ class Post(models.Model):
     title = models.CharField(max_length=255)
     compensation = models.CharField(max_length=255)
 
+    posted_at = models.DateTimeField(null=True)
+
     created_at = models.DateTimeField(auto_now_add=True, default=datetime.utcnow().replace(tzinfo=utc), null=False)
     updated_at = models.DateTimeField(auto_now=True, default=datetime.utcnow().replace(tzinfo=utc), null=False)
 
