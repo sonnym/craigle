@@ -26,3 +26,9 @@ class Post(models.Model):
         post.save()
 
         return post
+
+    def posted_at_str():
+        if posted_at:
+            posted_at.strftime('%Y-%m-%d %H:%M')
+        else:
+            'N/A'
