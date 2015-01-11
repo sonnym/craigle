@@ -17,12 +17,18 @@
         <div class="col-sm-2">Posted</div>
       </div>
 
-      {% for post in posts %}
+      {% for dated_posts in posts_by_date %}
         <div class="row">
-          <div class="col-sm-4 primary"><a href="{{ post.url }}">{{ post.title }}</a></div>
-          <div class="col-sm-4">{{ post.compensation }}</div>
-          <div class="col-sm-2">{{ post.posted_at_str }}</div>
+          <div class="col-sm-10 text-center border-row"><strong>{{ dated_posts.date_str }}</strong></div>
         </div>
+
+        {% for post in dated_posts.posts %}
+          <div class="row">
+            <div class="col-sm-4 primary"><a href="{{ post.url }}">{{ post.title }}</a></div>
+            <div class="col-sm-4">{{ post.compensation }}</div>
+            <div class="col-sm-2">{{ post.posted_at_str }}</div>
+          </div>
+        {% endfor %}
       {% endfor %}
     </div>
 

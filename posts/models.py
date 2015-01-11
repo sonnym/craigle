@@ -1,3 +1,6 @@
+from datetime import date
+from functools import total_ordering
+
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
 
@@ -29,3 +32,26 @@ class Post(models.Model):
             return self.posted_at.strftime('%Y-%m-%d %H:%M')
         else:
             return 'N/A'
+
+    @property
+    def posted_at_date(self):
+        if self.posted_at:
+            return date(self.posted_at.year, self.posted_at.month, self.posted_at.day)
+        else:
+            return None
+
+@total_ordering
+class DatedPosts():
+    def __init__(self, date, posts):
+        self.date = date
+        self.posts = posts
+
+    def __eq__(self, other):
+        return self.date == other.date
+
+    def __lt__(self, other):
+        return self.date > other.date
+
+    @property
+    def date_str(self):
+        return self.date.strftime("%Y-%m-%d")
