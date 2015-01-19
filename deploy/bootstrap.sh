@@ -97,6 +97,11 @@ then
   supervisorctl update
 fi
 
+# configure sshd
+cp /srv/craigle/deploy/sshd_config /etc/ssh/sshd_config
+chown root:root /etc/ssh/sshd_config
+systemctl restart sshd
+
 if [[ $PROVISION_REBOOT ]];
 then
   /sbin/shutdown -r now
