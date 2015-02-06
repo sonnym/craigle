@@ -1,1 +1,1 @@
-0 /2 * * * cd /srv/craigle && venv/bin/python3 manage.py rqenqueue "importers.run"
+0 */2 * * * cd /srv/craigle && venv/bin/python3 manage.py rqenqueue "importers.run"
