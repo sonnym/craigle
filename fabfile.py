@@ -13,6 +13,8 @@ def deploy(environment):
 
         sudo('sudo systemctl reload-or-restart httpd supervisord')
 
+        sudo('crontab < /srv/craigle/deploy/crontab')
+
 def seed(environment):
     _configure_env(environment)
 
