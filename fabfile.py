@@ -4,7 +4,8 @@ def deploy(environment):
     _configure_env(environment)
 
     with cd( '/srv/craigle'):
-        sudo('git pull')
+        sudo('git fetch')
+        sudo('git reset --hard origin/master')
 
         sudo('venv/bin/pip3 install -r requirements.txt')
 
