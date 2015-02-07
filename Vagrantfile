@@ -3,7 +3,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision :shell, path: 'deploy/bootstrap.sh'
 
   config.vm.define 'testing', primary: true do |test|
-    test.vm.box = 'chef/fedora-20'
+    test.vm.box = 'hansode/fedora-21-server-x86_64'
     test.vm.network :forwarded_port, host: 4567, guest: 80
   end
 
@@ -20,7 +20,7 @@ Vagrant.configure(2) do |config|
     production.vm.provider :digital_ocean do |provider, _|
       provider.token = File.read(File.expand_path('~/.digitalocean_token'))
 
-      provider.image = 'fedora-20-x64'
+      provider.image = 'fedora-21-x64'
       provider.region = 'nyc3'
       provider.size = '512mb'
 

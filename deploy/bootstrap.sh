@@ -1,21 +1,5 @@
 #!/usr/bin/env bash
 
-# upgrade to fedora 21
-if [[ $(cat /etc/fedora-release) == "Fedora release 20 (Heisenbug)" ]]
-then
-  yum --assumeyes update
-  rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-fedora-21-$(uname -i)
-  yum --assumeyes update yum
-  yum --assumeyes clean all
-  yum --releasever=21 --assumeyes distro-sync
-  yum --assumeyes remove firewalld-config-standard
-  yum --assumeyes install system-release-server
-
-  sync
-
-  PROVISION_REBOOT=1
-fi
-
 # system
 if [[ ! $(command -v virtualenv) ]]
 then
@@ -101,8 +85,3 @@ fi
 cp /srv/craigle/deploy/sshd_config /etc/ssh/sshd_config
 chown root:root /etc/ssh/sshd_config
 systemctl restart sshd
-
-if [[ $PROVISION_REBOOT ]];
-then
-  /sbin/shutdown -r now
-fi
