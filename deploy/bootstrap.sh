@@ -18,7 +18,7 @@ then
 
   # enable services
   systemctl enable httpd postgresql redis supervisord
-  systemctl start httpd postgresql redis supervisord
+  systemctl start postgresql redis
 
   # set up database and users
   su postgres -c 'createdb craigle_production'
@@ -71,16 +71,16 @@ fi
 if [[ -n /etc/httpd/conf.d/craigle.conf ]]
 then
   rm /etc/httpd/conf.d/*.conf
+
   cp /srv/craigle/deploy/httpd.conf /etc/httpd/conf.d/craigle.conf
+  systemctl restart httpd
 fi
 
 # configure and start workers
 if [[ -n /etc/supervisord.d/craigle_worker.ini ]]
 then
   cp /srv/craigle/deploy/supervisord.ini /etc/supervisord.d/craigle_worker.ini
-
-  supervisorctl reread
-  supervisorctl update
+  systemctl start supervisord
 fi
 
 # configure sshd
