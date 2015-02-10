@@ -46,7 +46,7 @@ then
 fi
 
 # application
-if ! [ -L /srv/craigle ]
+if [ ! -d /srv/craigle ]
 then
   # initial setup of directory
   mkdir -p /srv/craigle
