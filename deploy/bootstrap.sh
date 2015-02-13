@@ -2,6 +2,8 @@
 
 set -e
 
+yum --assumeyes update
+
 # system
 if [[ ! $(command -v virtualenv) ]]
 then
@@ -89,4 +91,10 @@ then
   cp /srv/craigle/deploy/sshd_config /etc/ssh/sshd_config
   chown root:root /etc/ssh/sshd_config
   systemctl restart sshd
+fi
+
+# reboot as necessary
+if [[ $(yum ps restarts | wc -l) -gt "3" ]]
+then
+  shutdown -r now
 fi
