@@ -8,10 +8,13 @@ yum --assumeyes update
 if [[ ! $(command -v virtualenv) ]]
 then
   # system dependencies
-  yum install --assumeyes python3-{mod_wsgi,pip} git postgresql-{server,contrib,devel} redis gcc {libxml2,libxslt,python3}-devel supervisor
+  yum install --assumeyes python3-{mod_wsgi,pip} git postgresql-{server,contrib,devel} redis gcc {libxml2,libxslt,python3}-devel supervisor logwatch postfix
 
   # ensure pip3 exists in expected location
   hash pip3 2>/dev/null || ln -s /usr/bin/python3-pip /usr/bin/pip3
+
+  systemctl enable postfix
+  systemctl start postfix
 
   pip3 install virtualenv
 
@@ -91,6 +94,13 @@ then
   cp /srv/craigle/deploy/sshd_config /etc/ssh/sshd_config
   chown root:root /etc/ssh/sshd_config
   systemctl restart sshd
+fi
+
+# configure logwatch
+if [[ -n $(diff /srv/craigle/deploy/logwatch.conf /etc/logwatch/conf/logwatch.conf) ]]
+then
+  cp /srv/craigle/deploy/logwatch.conf /etc/logwatch/conf/logwatch.conf
+  chown root:root $_
 fi
 
 # reboot as necessary
