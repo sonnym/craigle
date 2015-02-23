@@ -23,7 +23,7 @@ class SiteImporter():
             django_rq.enqueue(CityImporter.run, city)
 
 class CityImporter():
-    path = 'search/jjj/?cat_id=14&cat_id=21&cat_id=11&is_telecommuting=1&is_contract=1'
+    path = 'search/jjj/?excats=12-1-2-1-7-1-1-1-1-1-19-1-1-1-2-2-1-2-2-2-14-25-25-1-1-1-1-1-1&is_telecommuting=1&is_contract=1'
 
     @classmethod
     def run(cls, city):
