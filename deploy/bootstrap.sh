@@ -9,7 +9,7 @@ if [[ ! $(command -v virtualenv) ]]
 then
   # system dependencies
   yum remove ssmtp
-  yum install --assumeyes python3-{mod_wsgi,pip} git postgresql-{server,contrib,devel} redis gcc {libxml2,libxslt,python3}-devel supervisor logwatch postfix
+  yum install --assumeyes python3-{mod_wsgi,pip} git postgresql-{server,contrib,devel} redis gcc {libxml2,libxslt,python3}-devel yum-plugin-ps supervisor logwatch postfix
 
   # ensure pip3 exists in expected location
   hash pip3 2>/dev/null || ln -s /usr/bin/python3-pip /usr/bin/pip3
