@@ -1,6 +1,6 @@
-click==3.3
+click==4.0
 cssselect==0.9.1
-Django==1.7.6
+Django==1.8
 django-common-helpers==0.6.4
 django-rq==0.7.0
 django-smuggler==0.6.0
