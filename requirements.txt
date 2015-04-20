@@ -2,13 +2,13 @@ click==4.0
 cssselect==0.9.1
 Django==1.8
 django-common-helpers==0.6.4
-django-rq==0.7.0
+django-rq==0.8.0
 django-smuggler==0.6.0
 ecdsa==0.13
-lxml==3.4.2
+lxml==3.4.3
 paramiko==1.15.2
 psycopg2==2.6
 pycrypto==2.6.1
 redis==2.10.3
-rq==0.5.1
+rq==0.5.2
 South==1.0.2
