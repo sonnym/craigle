@@ -38,7 +38,7 @@ fi
 # swap file for compiling python binaries
 if [[ -n /swapfile ]]
 then
-  dd if=/dev/zero of=/swapfile bs=1024 count=512k
+  dd if=/dev/zero of=/swapfile bs=1024 count=1024k
   mkswap /swapfile
   swapon /swapfile
 
