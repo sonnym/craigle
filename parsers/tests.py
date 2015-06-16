@@ -34,5 +34,5 @@ class TestPostParser(ParserTestCase):
         html = self.load_fixture('post')
         post = PostParser().run(html)
 
-        self.assertEqual(post['title'], 'Ruby on Rails Software Developer')
-        self.assertEqual(post['compensation'], 'Position pay range from $85 to $200 plus based on proven experience.')
+        self.assertEqual(post['title'], 'PT Community Support Professional (After School) (Newfield)')
+        self.assertEqual(post['compensation'], 'Starting pay is $11.00 to $11.50 per hour')
