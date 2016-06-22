@@ -25,7 +25,7 @@ class SiteImporterTest(TestCase):
 
                     mock_city_create_or_update.assert_called_once_with(cities[0])
 
-                    mock_django_rq_enqueue.assert_called
+                    assert mock_django_rq_enqueue.called
 
 class CityImporterTest(TestCase):
     def test_run(self):
@@ -39,7 +39,7 @@ class CityImporterTest(TestCase):
 
                     mock_post_create_or_update.assert_called_once_with('http://nyc.craigslist.org/foo/bar')
 
-                    mock_django_rq_enqueue.assert_called
+                    assert mock_django_rq_enqueue.called
 
 class PostImporterTest(TestCase):
     def test_run(self):
