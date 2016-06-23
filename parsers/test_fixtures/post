@@ -1,28 +1,33 @@
 <!DOCTYPE html>
 <html class="no-js">
 <head>
-<title>PT Community Support Professional (After School)</title>
-	<link rel="canonical" href="http://ithaca.craigslist.org/npo/5075924221.html">
-	<meta name="description" content="The main purpose of this very rewarding role is to work together with individuals with developmental disabilities and those who care about them to create opportunities for achieving their dreams for...">
-	<meta name="robots" content="noarchive,nofollow">
+<title>DRIVERS NEEDED !!! STEADY RUNS !!!</title>
+	<link rel="canonical" href="http://ithaca.craigslist.org/trp/5616834131.html">
+	<meta name="description" content="Dry Van Over the Road opportunities are ready and available NOW!     Here Are The Details:   Up to $0.55 Per Mile 3000 + Miles Per Week Great Miles Consistent Mileage     Driver Requirements:   ">
+	<meta name="robots" content="noarchive,nofollow,unavailable_after:Saturday, 06-Aug-16 19:43:27 EDT">
 	<meta name="twitter:card" content="preview">
-	<meta property="og:description" content="The main purpose of this very rewarding role is to work together with individuals with developmental disabilities and those who care about them to create opportunities for achieving their dreams for...">
+	<meta property="og:description" content="Dry Van Over the Road opportunities are ready and available NOW!     Here Are The Details:   Up to $0.55 Per Mile 3000 + Miles Per Week Great Miles Consistent Mileage     Driver Requirements:   ">
 	<meta property="og:site_name" content="craigslist">
-	<meta property="og:title" content="PT Community Support Professional (After School)">
+	<meta property="og:title" content="DRIVERS NEEDED !!! STEADY RUNS !!!">
 	<meta property="og:type" content="article">
-	<meta property="og:url" content="http://ithaca.craigslist.org/npo/5075924221.html">
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=1">
-    <link type="text/css" rel="stylesheet" media="all" href="//www.craigslist.org/styles/cl.css?v=f233a95948b7a3dcabf6dc5d8653d939">
+	<meta property="og:url" content="http://ithaca.craigslist.org/trp/5616834131.html">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link type="text/css" rel="stylesheet" media="all" href="//www.craigslist.org/styles/cl.css?v=a1714916751d26ee0ae47420332c611b">
+    <link type="text/css" rel="stylesheet" media="all" href="//www.craigslist.org/styles/postings.css?v=ad64a5391d5c7a35456a0a1cd8709f68">
     
     <!--[if lt IE 9]>
 <script src="//www.craigslist.org/js/html5shiv.min.js?v=096822b653643ed1af3136947e4ea79a" type="text/javascript" ></script>
+
+<script src="//www.craigslist.org/js/respond-fork.min.js?v=d7e1cb0d97ee0c0c9d84a7d4f1d03469" type="text/javascript" ></script>
+
 <![endif]-->
 <!--[if lte IE 7]>
 <script src="//www.craigslist.org/js/json2.min.js?v=178d4ad319e0e0b4a451b15e49b71bec" type="text/javascript" ></script>
+
 <![endif]-->
 </head>
 
-<body class="posting">
+<body class="posting en">
     <script type="text/javascript"><!--
     function C(k){return(document.cookie.match('(^|; )'+k+'=([^;]*)')||0)[2]}
     var pagetype, pagemode;
@@ -40,8 +45,6 @@
         } else {
             pagemode = 'regular';
         }
-        var lng = C('cl_def_lang');
-        if (lng) bodyClassList.push(lng);
         pagemode = pagemode === 'mobile' ? 'mobile' : 'desktop';
         bodyClassList.push(pagemode);
         if (C('hidesearch') === '1' && pagemode !== 'mobile') {
@@ -49,8 +52,8 @@
         }
         var width = window.innerWidth || document.documentElement.clientWidth;
         if (width > 1000) { bodyClassList.push('w1024'); }
-        if (typeof sectionAbb !== 'undefined') {
-            var mode = (decodeURIComponent(C('cl_tocmode') || '').match(new RegExp(sectionAbb + ':([^,]+)', 'i')) || {})[1];
+        if (typeof window.sectionBase !== 'undefined') {
+            var mode = (decodeURIComponent(C('cl_tocmode') || '').match(new RegExp(window.sectionBase + ':([^,]+)', 'i')) || {})[1] || window.defaultView;
             if (mode) {
                 bodyClassList.push(mode);
             }
@@ -60,96 +63,153 @@
 --></script>
 
 
-    <article id="pagecontainer">
+    <section id="pagecontainer">
         <div class="bglogo"></div>
-        <header class="bchead">
-    <form id="breadcrumbform" method="get" action="" data-action="">
-        
-        <nav class="contents closed">
-            <div class="breadbox">
-                <ul class="breadcrumbs">
-                    <li class="crumb cl"><a href="/">CL</a></li><li class="crumb area"><a href="/">ithaca</a> &gt;</li><li class="crumb section"><a href="/jjj">jobs</a> &gt;</li><li class="crumb category"><a href="/npo">nonprofit</a> <span class="no-js"> <input type="submit" value="go"></span></li>
-                </ul>
-                <ul class="userlinks">
-    <li class="user post"><a href="https://post.craigslist.org/c/ith?lang=en">post</a></li>
-    <li class="user account"><em>[ </em><a href="https://accounts.craigslist.org/login/home">account</a><em> ]</em></li>
-    <li class="user fav"><div class="favorites">
-    <a href="#" class="favlink"><span class="n">0</span><span class="no-mobile"> favorites</span></a>
-</div></li>
-    <li><div class="menu-button">&mdash; &mdash; &mdash;</div></li>
+        <header class="global-header">
+   <a class="header-logo" href="/">CL</a>
+
+    <nav class="breadcrumbs-container">
+
+<ul class="breadcrumbs">
+        <li class="crumb area">
+            <p>
+                    <a href="/">ithaca</a>
+
+                    <span class="breadcrumb-arrow">&gt;</span>
+            </p>
+        </li>
+
+
+        <li class="crumb section">
+            <p>
+                    <a href="/jjj">jobs</a>
+
+                    <span class="breadcrumb-arrow">&gt;</span>
+            </p>
+        </li>
+
+        <li class="crumb category">
+            <p>
+                <a href="/trp">transportation</a>
+
+            </p>
+        </li>
+
+
+    <li class="crumb no-js">
+        <input type="submit" value="go">
+    </li>
 </ul>
+    </nav>
+
+<div class="userlinks">
+    <ul class="user-actions">
+        <li class="user post">
+            <a href="https://post.craigslist.org/c/ith">post</a>
+        </li>
+        <li class="user account">
+            <a href="https://accounts.craigslist.org/login/home">account</a>
+        </li>
+    </ul>
+    <ul class="user-favs-discards">
+        <li class="user">
+            <div class="favorites">
+                <a href="#" class="favlink"><span class="icon icon-star fav" aria-hidden="true"></span><span class="fav-number">0</span><span class="fav-label"> favorites</span></a>
             </div>
-            <div class="clearfix"></div>
-        </nav>
-    </form>
+        </li>
+        <li class="user discards">
+            <div>
+                <span class="icon icon-trash red" aria-hidden="true"></span><span class="hidden_count linklike withmap"></span><span class="hidden_count linklike nomap"></span><span class="discards-label linklike"> hidden</span>
+            </div>
+        </li>
+    </ul>
+</div>
 </header>
+
         <section class="body">
-            <section class="dateReplyBar">
+            <header class="dateReplyBar">
     
         <script type="text/javascript"><!--
-            var isPreview = "";
 var bestOf = "";
-var buttonPostingID = "5075924221";
-
-        --></script>
+var buttonPostingID = "5616834131";
+var isPreview = "";
+--></script>
     
 
 <button class="reply_button js-only">reply <span class="envelope">&#9993;</span> <span class="phone">&#9742;</span></button>
-    <span class="replylink"><a id="replylink" href="/reply/ith/npo/5075924221">reply</a></span>
+    <span class="replylink"><a id="replylink" href="/reply/ith/trp/5616834131">reply</a></span>
 
 <div class="returnemail js-only"></div>
 
     <aside class="flags">
-    <a class="flaglink" data-flag="28" href="https://post.craigslist.org/flag?flagCode=28&amp;postingID=5075924221&amp;subareaid=0&amp;areaid=201&amp;cat=npo&amp;area=ith" title="flag as prohibited / spam / miscategorized"><span class="flag">x</span> <span class="flagtext">prohibited</span></a><sup>[<a href="http://www.craigslist.org/about/prohibited">?</a>]</sup>
+    <a class="flaglink" data-flag="28" href="https://post.craigslist.org/flag?flagCode=28&amp;postingID=5616834131&amp;subareaid=0&amp;areaid=201&amp;cat=trp&amp;area=ith" title="flag as prohibited / spam / miscategorized"><span class="flag">x</span> <span class="flagtext">prohibited</span></a><sup>[<a href="http://www.craigslist.org/about/prohibited">?</a>]</sup>
 </aside>
-    <p id="display-date" class="postinginfo reveal">Posted: <time datetime="2015-06-15T16:25:09-0400">2015-06-15  4:25pm</time></p>
+    <p id="display-date" class="postinginfo reveal">Posted: <time  class="timeago" datetime="2016-06-02T20:48:55-0400">2016-06-02  8:48pm</time></p>
+    <a href="#" id="printme">print</a>
     <div class="prevnext js-only">
-    <a class="prevnext prev">&#9664;  prev </a>
+    <a class="prev">&#9664;  prev </a>
     <a class="backup" title="back to search">&#9650;</a>
-    <a class="prevnext next"> next &#9654; </a>
+    <a class="next"> next &#9654; </a>
 </div>
     
-    <a href="#" id="printme">print</a>
-</section>
+</header>
 
 <h2 class="postingtitle">
-  <span class="star"></span>
-  <span class="postingtitletext">PT Community Support Professional (After School)<small> (Newfield)</small></span>
+  <span class="icon icon-star" role="button">
+    <span class="screen-reader-text">favorite this post</span>
+  </span>
+  <span class="postingtitletext">
+    <span id="titletextonly">PT Community Support Professional (After School) (Newfield)</span><small> (ithaca)</small>
+    <span class="js-only banish-unbanish">
+  <span class="banish" title="hide this posting" role="button">
+    <span class="icon icon-trash" aria-hidden="true"></span>
+    <span class="screen-reader-text">hide this posting</span>
+  </span>
+  <span class="unbanish" title="restore this posting" role="button">
+    <span class="icon icon-trash red" aria-hidden="true"></span>
+    <span class="screen-reader-text">restore this posting</span>
+  </span>
+</span>
+  </span>
 </h2>
 <section class="userbody">
     
 
     <div class="mapAndAttrs">
         
-        <p class="attrgroup"><span>compensation: <b>Starting pay is $11.00 to $11.50 per hour</b></span><br><span>non-profit organization</span><br></p>
+        <p class="attrgroup"><span>compensation: <b>Starting pay is $11.00 to $11.50 per hour</b></span><br><span>employment type: <b>contract</b></span><br></p>
         
         <div class="no-mobile">
             
             <div id="printcontact"></div><p>
-            <div id="qrcode"></div>
+            <div id="qrcode" data-location="http://ithaca.craigslist.org/trp/5616834131.html"></div>
         </div>
     </div>
 
     <section id="postingbody">
-        The main purpose of this very rewarding role is to work together with individuals with developmental disabilities and those who care about them to create opportunities for achieving their dreams for success and happiness through increased independence, belonging, mastery, and generosity. We are looking for staff that are fun, creative and flexible to provide individualized services for a child, teen or adult to include: respite for families, teaching, modeling, and supporting skill development in a variety of areas at home and in the community. <br>
+        Dry Van Over the Road opportunities are ready and available NOW!<br>
+ <br>
+ <br>
+Here Are The Details:<br>
+ <br>
+Up to $0.55 Per Mile<br>
+3000 + Miles Per Week<br>
+Great Miles<br>
+Consistent Mileage<br>
+ <br>
+ <br>
+Driver Requirements:<br>
+ <br>
+Valid CDL Class A<br>
+23 Years Or Older<br>
+Good Driving Record<br>
+ <br>
+ <br>
+THE DEDICATED ROUTE YOU'VE BEEN WAITING FOR IS HERE!<br>
+ <br>
+Call Today! 
+ <a href="/fb/ith/trp/5616834131" class="showcontact" title="click to show contact info" rel="nofollow">show contact info</a>
 <br>
-Part-time position available in the Newfield area, with a focus on availability during after school hours. Available position is for 12 hours per day, scheduled 4 days per week. <br>
-<br>
-Starting pay is $11.00 to $11.50 per hour. <br>
-<br>
-Franziska Racker Centers, a Human Services agency, is dedicated to helping people with special needs and their families have good lives; with opportunities to learn, to be responsible, to feel cared for, to share, and to be connected with others. We are committed to creating a culture of inclusion in our community, celebrating the richness that diversity and interdependence bring. Many Community Support Professionals have used this role as a stepping stone to other progressively responsible positions within the agency. <br>
-<br>
-Requirements: <br>
-<br>
-Successful candidates will have a High School Diploma or GED and be an approved driver (at least 20 years old, at least three years driving experience, with a relatively clean record.) <br>
-<br>
-We offer health, dental, 403(b), paid time off, and tuition assistant for eligible staff working 27.5 hours on a weekly scheduled basis. <br>
-<br>
-We are proud to be an EEO employer M/F/D/V. We maintain a drug-free workplace. <br>
-<br>
-The Franziska Racker Centers does not solicit candidates or candidate information via outside Staffing Groups or Agencies for positions posted on this site. <br>
-<br>
-To be considered for this position, you need to complete a Franziska Racker Centers application, please visit the "Employment" tab at http://rackercenters.org<br>
 
     </section>
 
@@ -158,12 +218,16 @@ To be considered for this position, you need to complete a Franziska Racker Cent
 <li>do NOT contact us with unsolicited services or offers</li></ul>
 
     <div class="postinginfos">
-        <p class="postinginfo">post id: 5075924221</p>
-        <p class="postinginfo reveal">posted: <time datetime="2015-06-15T16:25:09-0400">2015-06-15  4:25pm</time></p>
-        
-               <p class="postinginfo"><a href="https://accounts.craigslist.org/eaf?postingID=5075924221&amp;token=U2FsdGVkX18yOTM3MDI5M371a6aUx4HCZNv3AMtFy0ur7dnTcLq5HSp0zL2QTsKH4OCUErI9_rqf6Pou3UAma65SXUQyM6DE" class="tsb">email to friend</a></p>
-               <p class="postinginfo"><a class="bestoflink" data-flag="9" href="https://post.craigslist.org/flag?flagCode=9&amp;postingID=5075924221&amp;" title="nominate for best-of-CL"><span class="bestof">&hearts; </span><span class="bestoftext">best of</span></a> <sup>[<a href="http://www.craigslist.org/about/best-of-craigslist">?</a>]</sup>
-</p>
+        <p class="postinginfo">post id: 5616834131</p>
+        <p class="postinginfo reveal">posted: <time datetime="2016-06-02T20:48:55-0400">2016-06-02  8:48pm</time></p>
+        <p class="postinginfo reveal">updated: <time datetime="2016-06-22T19:38:27-0400">2016-06-22  7:38pm</time></p>
+               <p class="postinginfo"><a href="https://accounts.craigslist.org/eaf?postingID=5616834131&amp;token=U2FsdGVkX18xNTQxMzE1NOZrlp_Q4jlGIniTd7g1KAuKN-TOuG7qxf8K-LUUJfcYoO7iJzsVh5ho6Pc0D4ndOD5z1BuqEAGK" class="tsb">email to friend</a></p>
+               <p class="postinginfo">
+                   <a class="bestof-link" data-flag="9" href="https://post.craigslist.org/flag?flagCode=9&amp;postingID=5616834131&amp;" title="nominate for best-of-CL">
+                     <span class="bestof-icon">&hearts; </span><span class="bestof-text">best of</span>
+                   </a> <sup>[<a href="http://www.craigslist.org/about/best-of-craigslist">?</a>]</sup>
+               </p>
+         
     </div>
     <div id="printpics"></div>
 
@@ -182,29 +246,30 @@ To be considered for this position, you need to complete a Franziska Racker Cent
         <footer>
     
     <ul class="clfooter">
-        <li>&copy; 2015 <span class="desktop">craigslist</span><span class="mobile">CL</span></li>
+        <li>&copy; 2016 <span class="desktop">craigslist</span><span class="mobile">CL</span></li>
         <li><a href="//www.craigslist.org/about/help/">help</a></li>
         <li><a href="//www.craigslist.org/about/scams">safety</a></li>
         <li class="desktop"><a href="//www.craigslist.org/about/privacy.policy">privacy</a></li>
         <li class="desktop"><a href="https://forums.craigslist.org/?forumID=8">feedback</a></li>
         <li class="desktop"><a href="//www.craigslist.org/about/craigslist_is_hiring">cl jobs</a></li>
-        <li><a href="//www.craigslist.org/about/terms.of.use">terms</a></li>
+        <li><a href="//www.craigslist.org/about/terms.of.use.en">terms</a></li>
         <li><a href="//www.craigslist.org/about/">about</a></li>
         <li class="fsel desktop linklike" data-mode="mobile">mobile</li>
         <li class="fsel mobile linklike" data-mode="regular">desktop</li>
     </ul>
 </footer>
-    </article>
+    </section>
 
     
         <script type="text/javascript"><!--
-            var repost_of = 5000049732;
-var countOfTotalText = "{count} of {total}";
-var pID = "5075924221";
-
-        --></script>
+var countOfTotalText = "image {count} of {total}";
+var imageHost = "//images.craigslist.org";
+var maptileBaseUrl = "//map{s}.craigslist.org/t08/{z}/{x}/{y}.png";
+var pID = "5616834131";
+--></script>
     
-    <script src="//www.craigslist.org/js/general-concat.min.js?v=1a2a0a57260a57cd1e73343d7b037fe3" type="text/javascript" ></script>
+    <script src="//www.craigslist.org/js/general-concat.min.js?v=5048a1c462be4f4946627a3fb8ae20b0" type="text/javascript" ></script>
+
     <script type="text/javascript"><!--
         var iframe = document.createElement('iframe');
         iframe.style.display = 'none';
@@ -212,6 +277,7 @@ var pID = "5075924221";
         document.body.insertBefore(iframe, null);
     --></script>
     
-    <script src="//www.craigslist.org/js/postings-concat.min.js?v=4aa35bb8ea681e3a6c0c6e82bcaf31b2" type="text/javascript" ></script>
+    <script src="//www.craigslist.org/js/postings-concat.min.js?v=7097fc71c5c8a0ea56af2aa10396501c" type="text/javascript" ></script>
+
 </body>
 </html>

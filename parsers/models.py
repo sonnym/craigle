@@ -24,7 +24,7 @@ class PostParser():
     def run(self, contents):
         tree = html.document_fromstring(contents)
 
-        title = str(tree.cssselect('h2.postingtitle')[0].text_content()).strip()
+        title = str(tree.cssselect('span#titletextonly')[0].text_content()).strip()
         compensation = tree.cssselect('div.mapAndAttrs p.attrgroup b')[0].text
 
         posted_at = tree.cssselect('p#display-date time')[0].get('datetime')
