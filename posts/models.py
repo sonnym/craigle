@@ -3,9 +3,10 @@ from functools import total_ordering
 
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.validators import URLValidator
 
 class Post(models.Model):
-    url = models.CharField(max_length=127, unique=True)
+    url = models.CharField(max_length=127, unique=True, validators=[URLValidator(schemes=['http'])])
     title = models.CharField(max_length=255)
     compensation = models.CharField(max_length=255)
 

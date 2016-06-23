@@ -1,9 +1,10 @@
 from django.db import models
 from django.core.exceptions import ObjectDoesNotExist
+from django.core.validators import URLValidator
 
 class City(models.Model):
     name = models.CharField(max_length=127, unique=True)
-    url = models.CharField(max_length=127)
+    url = models.CharField(max_length=127, validators=[URLValidator(schemes=['http'])])
 
     @classmethod
     def create_or_update(cls, city_data):
