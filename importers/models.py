@@ -30,7 +30,7 @@ class CityImporter():
         response = urlopen(urljoin(city.url, cls.path, allow_fragments=True))
         html = response.read()
 
-        posts = CityParser().run(html)
+        posts = CityParser().run(city, html)
 
         for post_data in posts:
             post = Post.create_or_update(urljoin(city.url, post_data))
