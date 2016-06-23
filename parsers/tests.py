@@ -1,6 +1,7 @@
 import os.path
 
 from django.test import TestCase
+from django.core.validators import URLValidator
 
 from parsers.models import SiteParser, CityParser, PostParser
 
@@ -18,8 +19,10 @@ class TestSiteParser(ParserTestCase):
         html = self.load_fixture('sites')
         cities = SiteParser().run(html)
 
-        self.assertEqual(len(cities), 712)
+        self.assertEqual(len(cities), 714)
         all(map(lambda city: self.assertIsInstance(city, dict), cities))
+
+        all(map(lambda city, v=URLValidator(schemes=['https']): v(city['url']), cities))
 
 class TestCityParser(ParserTestCase):
     def test_run(self):

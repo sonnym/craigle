@@ -1,3 +1,5 @@
+from urllib.parse import urlparse, urljoin
+
 from datetime import datetime
 from lxml import html
 
@@ -6,7 +8,16 @@ class SiteParser():
         tree = html.document_fromstring(contents)
         cities = tree.cssselect('section.body ul li a')
 
-        return [{ 'name': city.text_content(), 'url': city.get('href') } for city in cities]
+        return [{ 'name': city.text_content(), 'url': self.__ensure_url_scheme(city.get('href')) } for city in cities]
+
+    def __ensure_url_scheme(self, urlish):
+        parsed_url = urlparse(urlish)
+
+        if parsed_url.scheme == '':
+            return urljoin('https://' + parsed_url.netloc, parsed_url.path)
+        else:
+            return urlish
+
 
 class CityParser():
     def run(self, contents):
